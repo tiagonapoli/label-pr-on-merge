@@ -4,6 +4,6 @@
   "exec": "yarn build-incremental",
   "ext": "ts",
   "events": {
-    "crash": "yarn notify -t 'toolbelt-template-renderer: dev-watch' -m 'build failed'"
+    "crash": "yarn notify -t 'label-pr-on-merge: dev-watch' -m 'build failed'"
   }
 }

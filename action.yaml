@@ -1,0 +1,21 @@
+name: "Label PR on merge"
+
+description: "Add label on branch's PR when it's merged"
+
+inputs: 
+  repo-token:
+    description: 'The GITHUB_TOKEN secret'
+    required: true
+  merged-label-name:
+    description: 'The label name to add on a PR when it is merged onto the target branch'
+    required: true
+  stale-merged-label-name:
+    description: 'The label name to add when a PR was merged onto the targed branch but now was updated'
+    required: true
+  target-branch:
+    description: 'The branch to watch for merge commits in'
+    required: true
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
