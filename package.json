@@ -1,7 +1,8 @@
 {
-  "name": "",
+  "name": "label-pr-on-merge",
   "version": "0.0.0",
   "description": "",
+  "license": "MIT",
   "main": "build/index.js",
   "scripts": {
     "format": "prettier --config ./.prettierrc --write \"**/*.{ts,js,json}\"",
@@ -11,6 +12,7 @@
     "build-clean": "rm -rf build",
     "build-incremental": "tsc --incremental",
     "build": "yarn build-clean && tsc",
+    "build-release": "yarn ncc build src/index.ts",
     "test": "jest",
     "prepublishOnly": "bash ./scripts/publishLock.sh",
     "ci:test": "yarn test --ci",
@@ -19,10 +21,14 @@
   "files": [
     "build"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  },
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "@types/node": "^12.0.0",
+    "@vercel/ncc": "^0.26.1",
     "eslint": "^6.8.0",
     "eslint-config-vtex": "^12.3.0",
     "jest": "^25.1.0",

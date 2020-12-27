@@ -6,7 +6,6 @@
     "outDir": "build",
     "module": "commonjs",
     "esModuleInterop": true,
-    "declaration": true,
     "skipLibCheck": true,
     "strict": true
   },
